@@ -1,10 +1,21 @@
 <?php
 
+
+header("Access-Control-Allow-Origin: *");
+
+header("Content-Type: application/json; charset=UTF-8");
+
+header("Access-Control-Allow-Methods: POST");
+
+header("Access-Control-Max-Age: 3600");
+
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
+date_default_timezone_set("Africa/Lagos");
+
 $mail_host = "info@lasvegasconcordservice.com";
 $mail_title = "[LASVEGAS CONCORD SERVICE] Contact Form Message";
 
-define("MAIL_HOST", $mail_host);
-define("MAIL_TITLE", $mail_title);
 
 $name = "";
 $email_from = "";
@@ -35,8 +46,14 @@ if (isset($_POST['message'])) {
 
 
 if( isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']) ){
-    $headers = "From: $email_from\nMIME-Version: 1.0\nContent-type: text/html; charset=iso-8859-1\n";
-    if( mail($email_from, $mail_title, $mail_body, $headers) ) {
+       
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    
+ 
+
+    $love = mail('info@lasvegasconcordservice.com', $mail_title, $mail_body, $headers);
+    if( $love ) {
         $serialized_data = '{"type":1, "message":"Contact form successfully submitted. Thank you,"}';
         echo $serialized_data;
     } else {

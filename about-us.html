@@ -51,9 +51,9 @@
                             <div class="header__content">
                                 <div class="logo">
                                     <a href="#">
-                                        <img src="images/icon/logo-black.png" alt="Tatee" />
+                                        <img src="images/icon/logo-blacka.png" alt="LAsvegasconcordservice" />
                                     </a>
-                                    <strong style="color: #000000;">LasVegas Concord Service </strong>
+                                    <strong style="color: #000000; font-size: large;">LasVegas Concord Service </strong>
                                 </div>
                                 <div class="header__content-right">
                                     <nav class="header-nav-menu">
@@ -270,7 +270,7 @@
                 <div class="container">
                     <div class="section-title">
                         <h5 class="title-sub" style="color: #a8393f;">what we do</h5>
-                        <h2 class="title-1">Our specilization</h2>
+                        <h2 class="title-1">Our specilisation</h2>
                     </div>
                     <div class="row no-gutters">
                         <div class="col-md-6 col-lg-4">
@@ -766,6 +766,17 @@
 
     <!-- Main JS-->
     <script src="js/global.js"></script>
+    <script type="text/javascript">
+        function add_chatinline() {
+            var hccid = 97819133;
+            var nt = document.createElement("script");
+            nt.async = true;
+            nt.src = "https://mylivechat.com/chatinline.aspx?hccid=" + hccid;
+            var ct = document.getElementsByTagName("script")[0];
+            ct.parentNode.insertBefore(nt, ct);
+        }
+        add_chatinline();
+    </script>
 
 </body>
 
